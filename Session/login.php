@@ -6,10 +6,10 @@
     $Mail = $_POST["email"];
     // $hash_password = hash("sha256", $Pass);
 
-    $sql = "SELECT * FROM users WHERE Nama='$Name' AND Email='$Mail' AND Password='$Pass'  ";
+    $sql = "SELECT * FROM users WHERE Nama='$Name' AND Email='$Mail' AND Password='$Pass'";
     $result = $konek->query($sql);
 
-    if ($result->num_rows == 1) {
+    if ($result->num_rows > 0) {
       header("Location: ../index.php");
     } else {
       echo "gagal ajur!!!";
