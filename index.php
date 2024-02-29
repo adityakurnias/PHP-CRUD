@@ -1,6 +1,4 @@
 <?php
 
 ?>
-
-<p>Index kontol</p>
-<p>adit john jombi</p>
+<p>bisa puh</p>

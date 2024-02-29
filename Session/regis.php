@@ -1,20 +1,24 @@
 <?php
 include("../konek.php");
+if(isset($_POST['submit'])){
+    $Name = $_POST["nama"];
+    $Pass = $_POST["password"];
+    $Mail = $_POST["email"];
+    // $hash_password = hash("sha256", $Pass);
 
+    $cek = "SELECT * FROM users WHERE Nama='$Name' AND Email='$Mail' AND Password='$Pass'";
+    $hasilcek = $konek->query($cek);
     
-    if(isset($_POST['submit'])){
-        $Name = $_POST["nama"];
-        $Pass = $_POST["password"];
-        $Mail = $_POST["email"];
-        // $hash_password = hash("sha256", $Pass);
-
-        $sql = "INSERT INTO `users` (`id`, `Nama`, `Password`, `Email`) VALUES (NULL, '$Name', '$Pass', '$Mail')";
-        $result = $konek->query($sql);
+    if ($hasilcek->num_rows > 0) {
+        echo "masukan nama lain";
+    } else {
+    $sql = "INSERT INTO `users` (`id`, `Nama`, `Password`, `Email`) VALUES (NULL, '$Name', '$Pass', '$Mail')";
+    $result = $konek->query($sql);
     if($result){
         echo "<script>alert('Registrasi Berhasil Dek')</script>";
         header("Location: login.php");
     } 
-} 
+}}
 ?>
 <!DOCTYPE html>
 <html lang="en">
