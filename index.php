@@ -2,4 +2,4 @@
 
 ?>
 
-<p>Index</p>
+<p>Index kontol</p>
