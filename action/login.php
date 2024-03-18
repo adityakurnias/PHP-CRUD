@@ -3,10 +3,10 @@
     session_start();
   if(isset($_POST['submit'])) {
     $Pass = $_POST["password"];
-    $Mail = $_POST["email"];
+    $email = $_POST["email"];
     // $hash_password = hash("sha256", $Pass);
 
-    $sql = "SELECT * FROM users WHERE Email='$Mail' AND Password='$Pass'";
+    $sql = "SELECT * FROM users WHERE Email='$email' AND Password='$Pass'";
     $result = $konek->query($sql);
 
     if ($result->num_rows > 0) {

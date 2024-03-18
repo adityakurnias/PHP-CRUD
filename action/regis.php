@@ -3,19 +3,20 @@ include("../konek.php");
 session_start();
 if (isset($_POST['submit'])) {
     $Pass = $_POST["password"];
-    $Mail = $_POST["email"];
-    // $hash_password = hash("sha256", $Pass);
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    //$hash_password = hash("sha256", $Pass);
 
-    $cek = "SELECT * FROM users WHERE Email='$Mail'";
+    $cek = "SELECT * FROM users WHERE email='$email'";
     $hasilcek = $konek->query($cek);
 
     if ($hasilcek->num_rows > 0) {
-        echo "Email sudah digunakan";
+        echo "alert('Username atau Email sudah digunakan')";
     } else {
-        $sql = "INSERT INTO `users` (`id`, `Email`, `Password`) VALUES (NULL,'$Mail', '$Pass')";
+        $sql = "INSERT INTO `users` (`username`, `email`, `password`) VALUES ('$username', $email', '$password')";
         $result = $konek->query($sql);
         if ($result) {
-            header("Location: login.php");
+          header("Location: login.php");
         }
     }
 }
@@ -36,7 +37,8 @@ if (isset($_POST['submit'])) {
           Daftar</h1>
       
         <form class="flex flex-col my-4" action="regis.php" method="POST">
-          <input class="mb-2 rounded-[8px] p-2 focus:ring ring-[#9288F8] outline-none duration-100" name="email" type="text" placeholder="Masukan Email" required>
+          <input class="mb-3 rounded-[8px] p-2 focus:ring ring-[#9288F8] outline-none duration-100" name="username" type="text" placeholder="Masukan Username" required>
+          <input class="mb-3 rounded-[8px] p-2 focus:ring ring-[#9288F8] outline-none duration-100" name="email" type="text" placeholder="Masukan Email" required>
           <input class="mb-6 rounded-[8px] p-2 focus:ring ring-[#9288F8] outline-none duration-100" name="password" type="password" placeholder="Masukan Password" required>
           <input class="mb-2 bg-[#9288F8] rounded-[8px] h-9 text-xl font-semibold tracking-wides text-[#322653] hover:scale-[1.02] ease-in-out duration-75" name="submit" type="submit" value="Daftar">
           
