@@ -1,5 +1,5 @@
 <?php
-    $konek = new mysqli("127.0.0.1", "root", "root", "sosialnet");
+    $konek = new mysqli("localhost", "root", "", "sosialnet");
 
     if($konek->connect_error){
         echo "Db Rusak";

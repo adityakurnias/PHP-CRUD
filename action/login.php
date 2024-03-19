@@ -4,13 +4,15 @@
   if(isset($_POST['submit'])) {
     $Pass = $_POST["password"];
     $email = $_POST["email"];
-    // $hash_password = hash("sha256", $Pass);
+    $hash_password = sha1($Pass);
 
-    $sql = "SELECT * FROM users WHERE Email='$email' AND Password='$Pass'";
+    $sql = "SELECT email, password FROM users WHERE email='$email' AND password='$hash_password'";
     $result = $konek->query($sql);
 
     if ($result->num_rows > 0) {
-      header("Location: ../index.php");
+      $_SESSION['email'] = $email;
+      header("Location: ../home.php");
+      return;
     } else {
       echo "goblok";
     }
@@ -25,9 +27,9 @@
   <title>Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[url('./img/BgTestt.jpg')] bg-cover bg-no-repeat bg-center ">
-<div class="hidden md:flex bg-zinc-100/50 h-screen w-96  items-center justify-center">
-      <div class="bg-zinc-100 px-4 w-3/4 h-auto rounded-lg drop-shadow-md justify-center">
+<body class="bg-[url('../img/tesbg.jpg')] bg-cover bg-no-repeat bg-center ">
+<div class="flex bg-zinc-100/20 h-screen w-1/4  items-center justify-center backdrop-blur-sm border-2 border-slate-500">
+      <div class="bg-zinc-100 px-4 w-3/4 max-w-80 h-auto rounded-lg drop-shadow-md justify-center">
       
         <h1 class="text-3xl my-3 text-center font-semibold tracking-wides text-[#322653] hover:bg-gradient-to-r from-[#9288F8] from-40 to-[#322653] to-90% bg-clip-text hover:text-transparent">
           Masuk ke Akun</h1>
