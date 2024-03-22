@@ -20,7 +20,7 @@
 
     
 
-    <div class="hidden fixed flex flex-col justify-center items-center bg-slate-200/40 w-1/2 h-1/2 self-center rounded-lg backdrop-blur">
+    <div id="formUpload" class="hidden fixed flex flex-col justify-center items-center bg-slate-200/40 w-1/2 h-1/2 self-center rounded-lg backdrop-blur">
       <form class="flex flex-col justify-center items-center" action="./action/upload.php" method="post">
         <textarea class="max-h-48 mb-6 rounded-lg" cols="50" rows="10"></textarea>
         <input class="mb-6" type="file" accept=".jpg, .png, .jpeg, .webp">
@@ -28,8 +28,8 @@
       </form>
     </div>
 
-    <div class="fixed bg-slate-100/40 z-10 mb-10 self-end rounded-full flex justify-center items-center hover:translate-y-[-5px] duration-100 backdrop-blur-sm shadow-lg p-2">
-      <img onclick="addPopup()" class="" src="./img/add.png" width="40px">
+    <div class="fixed bg-slate-100/40 z-10 mb-10 self-end rounded-full flex justify-center items-center hover:translate-y-[-5px] duration-100 backdrop-blur-sm shadow-lg p-2" onclick="addPopup()">
+      <img class="" src="./img/add.png" width="40px">
     </div>
 
   </div>
