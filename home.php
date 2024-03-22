@@ -20,7 +20,7 @@
 
     
   <!-- form post -->
-    <div class=" hidden fixed flex flex-col justify-center items-center bg-slate-200/40 w-1/2 h-1/2 self-center rounded-lg backdrop-blur">
+    <div class=" hidden fixed flex flex-col justify-center items-center bg-slate-200/40 w-1/2 h-1/2 self-center rounded-lg backdrop-blur" id="formUpload">
       <form class="flex flex-col justify-center items-center" action="./action/upload.php" method="post">       
         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Caption</label>
         <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
@@ -34,7 +34,7 @@
 
     <!-- buat trigger post -->
     <div class="fixed bg-slate-100/40 z-10 mb-10 self-end rounded-full flex justify-center items-center hover:translate-y-[-5px] duration-100 backdrop-blur-sm shadow-lg p-2">
-      <p><a href="home.php?new=" name="mantap"><img onclick="addPopup()" class="" src="./img/add.png" width="40px" value="osas" ></a></p>
+      <p><a href="home.php?new=" name="mantap"><img id="addPopup" class="" src="./img/add.png" width="40px" value="osas" ></a></p>
     </div>
 
   </div>
