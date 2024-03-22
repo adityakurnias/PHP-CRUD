@@ -19,17 +19,22 @@
   <div class="w-screen h-screen px-96 flex justify-center">
 
     
-
-    <div class="hidden fixed flex flex-col justify-center items-center bg-slate-200/40 w-1/2 h-1/2 self-center rounded-lg backdrop-blur">
-      <form class="flex flex-col justify-center items-center" action="./action/upload.php" method="post">
-        <textarea class="max-h-48 mb-6 rounded-lg" cols="50" rows="10"></textarea>
+  <!-- form post -->
+    <div class=" hidden fixed flex flex-col justify-center items-center bg-slate-200/40 w-1/2 h-1/2 self-center rounded-lg backdrop-blur">
+      <form class="flex flex-col justify-center items-center" action="./action/upload.php" method="post">       
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Caption</label>
+        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
         <input class="mb-6" type="file" accept=".jpg, .png, .jpeg, .webp">
         <input type="submit" value="Upload">
       </form>
     </div>
 
+    <!-- main feed -->
+
+
+    <!-- buat trigger post -->
     <div class="fixed bg-slate-100/40 z-10 mb-10 self-end rounded-full flex justify-center items-center hover:translate-y-[-5px] duration-100 backdrop-blur-sm shadow-lg p-2">
-      <img onclick="addPopup()" class="" src="./img/add.png" width="40px">
+      <p><a href="home.php?new=" name="mantap"><img onclick="addPopup()" class="" src="./img/add.png" width="40px" value="osas" ></a></p>
     </div>
 
   </div>
