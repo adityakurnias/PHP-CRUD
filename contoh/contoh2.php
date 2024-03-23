@@ -1,13 +1,6 @@
 <?php
-   include ("konek.php");
-   $query = "SELECT * FROM `post` ";
-    $sql = mysqli_query($konek, $query);
-    
-    if($sql){
-        
-    } else {
-        echo $query;
-    }
+   include ("../konek.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php while($result= mysqli_fetch_assoc($sql))
-  { ?>
-       <p><?= $result['caption']; ?></p><br>
 
-        <?php } ?>
         <a href=""></a>
         <a href="contoh1.php">balik</a>
 </body>

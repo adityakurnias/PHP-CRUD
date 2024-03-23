@@ -22,7 +22,7 @@
 
 
     <!-- main feed -->
-
+    
 
     <!-- buat trigger post -->
     <div class="fixed bg-slate-100/40 z-10 mb-10 self-end rounded-full flex justify-center items-center hover:translate-y-[-5px] duration-100 backdrop-blur-sm shadow-lg p-2">

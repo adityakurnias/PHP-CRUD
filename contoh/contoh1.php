@@ -1,5 +1,5 @@
 <?php
-  include ("konek.php");
+  include ("../konek.php");
 
   if(isset($_POST['submit'])){
     if($_POST['submit'] == "add"){
@@ -51,7 +51,9 @@
 </head>
 <body>
   <form action="" method="post" enctype="multipart/form-data">
-    <textarea name="cp" id="" cols="30" rows="10" placeholder="osas" required></textarea> <br>
+    <textarea name="cp" id="" cols="30" rows="10" placeholder="osas" required></textarea>
+    <input type="file" accept=".jpg, .png, .jpeg" name="foto"> 
+    <br>
     <input type="submit" name="submit" value="add">
   </form>
 
