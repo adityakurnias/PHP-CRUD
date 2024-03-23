@@ -1,0 +1,7 @@
+23/03/2024 {
+    satria : gue ngedit contoh 1, contoh2.Baru benerin create , nanti abis isya gue buat yang delete sama edit.Terus
+    nanti tinggal copy sama ubah dikit kehome.
+    PR:
+    buat readnya yang itu dit buatnampilin di homenya, kalau biasanya readnya pake table.
+    dsb
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Mar 2024 pada 16.15
+-- Waktu pembuatan: 23 Mar 2024 pada 11.26
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `sosialnet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `post`
+--
+
+CREATE TABLE `post` (
+  `id` int(11) NOT NULL,
+  `caption` text NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `post`
+--
+
+INSERT INTO `post` (`id`, `caption`, `image`) VALUES
+(56, 'ae', ''),
+(57, '', ''),
+(58, '', ''),
+(59, 'w', '');
 
 -- --------------------------------------------------------
 
@@ -46,6 +68,12 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 --
 
 --
+-- Indeks untuk tabel `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
@@ -54,6 +82,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

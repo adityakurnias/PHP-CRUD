@@ -13,18 +13,19 @@
 
   function add(){
     global $konek;
-
     $caption = $_POST['cp'];
-    $img = "botak.jpg";
 
-    $query= "INSERT INTO `post`(`caption`, `image`) VALUES ('$caption','$img')";
+    $query= "INSERT INTO `post`(`caption`) VALUES ('$caption')";
     $sql = mysqli_query($konek, $query);
 
     if($sql){
-      echo "<script>alert('osas')</script>";
+      header("location: contoh2.php");
     } else {
       echo "<script>alert('error')</script>";
     }
+
+
+
 
   }
   function edit(){
@@ -36,14 +37,7 @@
   
 // read
 
-  $query = "SELECT * FROM `post` ";
-  $sql = mysqli_query($konek, $query);
 
-  if($sql){
-      header("location: contoh.php");
-  } else {
-      echo $query;
-  }
   
 
 ?>
@@ -57,18 +51,11 @@
 </head>
 <body>
   <form action="" method="post" enctype="multipart/form-data">
-    <textarea name="cp" id="" cols="30" rows="10" placeholder="osas"></textarea> <br>
-    <input type="file" accept=".jpg, .png, .jpeg" name="image">
+    <textarea name="cp" id="" cols="30" rows="10" placeholder="osas" required></textarea> <br>
     <input type="submit" name="submit" value="add">
   </form>
 
   <!-- read -->
-  <div class="bg-stone-600">
-  <?php while($result= mysqli_fetch_assoc($sql))
-  { ?>
-        <img src="<?= $result ?>" alt="">
-        <p><?= $result ?></p>
 
-        <?php } ?>
 </body>
 </html>
