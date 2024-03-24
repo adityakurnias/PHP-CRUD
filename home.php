@@ -30,7 +30,8 @@
     while($result = mysqli_fetch_assoc($sql)) {
         ?>
 
-<div class="bg-gray-50 dark:bg-black p-10 flex-col items-center justify-center">
+<div class="w-screen h-screen flex flex-coll">
+   <div class="bg-gray-50 dark:bg-black p-10 flex-col items-center justify-center">
   <div class="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-800 p-4 rounded-xl border max-w-xl inline-grid flex-col">
     <div class="flex justify-between">
       <div class="flex items-center">
@@ -60,8 +61,9 @@
       </div>
     </div>
   </div>
+   </div>
+   
 </div>
-
       <?php
     } 
     ?>
