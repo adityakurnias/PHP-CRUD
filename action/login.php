@@ -4,17 +4,17 @@
   if(isset($_POST['submit'])) {
     $Pass = $_POST["password"];
     $email = $_POST["email"];
+   
     $hash_password = sha1($Pass);
 
-    $sql = "SELECT email, password FROM users WHERE email='$email' AND password='$hash_password'";
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$hash_password'";
     $result = $konek->query($sql);
-
+    $adudu= mysqli_fetch_assoc($result);
+   
     if ($result->num_rows > 0) {
+      $_SESSION['username']= $adudu['username'];
       $_SESSION['email'] = $email;
-      header("Location: ../home.php");
-      return;
-    } else {
-      echo "goblok";
+      header("location: ../home.php");
     }
   }
 ?>

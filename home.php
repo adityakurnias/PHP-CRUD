@@ -1,8 +1,19 @@
 <?php
    include("konek.php");
    session_start();
+   if(!isset($_SESSION['email'])&& !isset($_SESSION['username'])){
+    header("location: action/login.php");
+   }
    $query = "SELECT * FROM `post`;";
    $sql = mysqli_query($konek, $query);
+
+   
+   $querya = "SELECT * FROM `users`";
+   $sqla = mysqli_query($konek, $querya);
+   $hasil= mysqli_fetch_assoc($sqla);
+   
+  
+
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +29,7 @@
 <body class="font-mono overflow-x-hidden h-screen bg-slate-100">
   <nav class="sticky top-0 w-screen h-9 bg-slate-200/10 p-2 px-96 shadow-md flex  justify-between items-center z-10 backdrop-blur">
     <h1 class="font-bold text-xl">Apalah</h1>
-    <a href="account.php">Account</a>
+    <a href="account.php"><?= $_SESSION['username']; ?></a>
   </nav>
   
   <div class="w-screen h-screen px-96 flex justify-center">
@@ -28,13 +39,13 @@
     while($result = mysqli_fetch_assoc($sql)) {
         ?>
 
-   <div class=" items-center p-10   ">
+   <div class=" items-center p-10">
   <div class="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-800 p-4 rounded-xl border max-w-xl min-w-xl flex flex-col ">
     <div class="flex justify-between">
       <div class="flex items-center">
         <img class="h-11 w-11 rounded-full" src="img/guest.png"/>
         <div class="ml-1.5 text-sm leading-tight">
-          <span class="text-black dark:text-white font-bold block ">user</span>
+          <span class="text-black dark:text-white font-bold block "><?= $hasil['username'];?></span>
           <span class="text-gray-500 dark:text-gray-400 font-normal block"></span>
         </div>
       </div>
@@ -63,9 +74,10 @@
 </div>
       <?php
     } 
+   
     ?>
     </div>
-     
+ 
     
 
     <!-- buat trigger post -->

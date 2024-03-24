@@ -1,24 +1,22 @@
 <?php
+        session_start();
     include ("../konek.php");
-
-        if(isset($_POST['submit'])){
-            if($_POST['submit'] == "add"){
+      
+            if(isset($_POST['add'])){
               add();
-            } else if ($_POST['submit'] == "edit"){
+            } else if (isset($_POST['edit'])){
               edit();
-            } 
-         
-         
-          } else if($_GET['hapus']){
-          delete();
-      }
+            } else if(isset($_GET['hapus'])){
+              delete();
+          }
          
         
           function add(){
             global $konek;
+            $userid=$_SESSION['username'];
             $caption = $_POST['cp'];
         
-            $query= "INSERT INTO `post`(`caption`) VALUES ('$caption')";
+            $query= "INSERT INTO `post`(`user_id`, `caption`) VALUES ('$userid','$caption')";
             $sql = mysqli_query($konek, $query);
         
             if($sql){
@@ -33,13 +31,11 @@
           }
           function edit(){
             global $konek;    //global $konek; buat nyambungin include dari ataske function
-            if(isset($_GET['ubah'])){
-              
               
               $id = $_POST['id-form'];
               $caption = $_POST['cp'];
               
-              $query = "UPDATE `post` SET `caption`='$caption' WHERE id= '$id';";
+              $query = "UPDATE `post` SET `caption`='$caption' WHERE id='$id'";
               $sql = mysqli_query($konek, $query);
               
               if($sql){
@@ -51,13 +47,13 @@
             }
 
 
-          }
+          
           function delete(){
             global $konek;
             
             $id = $_GET['hapus'];
             
-            $query = "DELETE FROM `post` WHERE id='$id';";
+            $query = "DELETE FROM `post` WHERE id='$id'";
             $sql = mysqli_query($konek, $query);
      
                  if($sql){
@@ -68,10 +64,11 @@
           }
           
 
-
+echo $_SESSION['username'];
 
 
 
 
 
 ?>
+
