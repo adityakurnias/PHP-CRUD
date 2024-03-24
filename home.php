@@ -1,6 +1,6 @@
 <?php
    include("konek.php");
-   
+   session_start();
    $query = "SELECT * FROM `post`;";
    $sql = mysqli_query($konek, $query);
 
@@ -18,7 +18,7 @@
 <body class="font-mono overflow-x-hidden h-screen bg-slate-100">
   <nav class="sticky top-0 w-screen h-9 bg-slate-200/10 p-2 px-96 shadow-md flex  justify-between items-center z-10 backdrop-blur">
     <h1 class="font-bold text-xl">Apalah</h1>
-    <a href="">Account</a>
+    <a href="account.php">Account</a>
   </nav>
   
   <div class="w-screen h-screen px-96 flex justify-center">

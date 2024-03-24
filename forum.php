@@ -1,5 +1,6 @@
 <?php
    include ("konek.php");
+   session_start();
    $idok = '';
    $caption = '';  //dikasih variabel value kosong buat di kondisi add captionnya ga ke trigger
 
