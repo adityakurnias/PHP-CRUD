@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Mar 2024 pada 11.26
+-- Waktu pembuatan: 24 Mar 2024 pada 17.19
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -29,19 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
-  `caption` text NOT NULL,
-  `image` varchar(255) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `caption` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `post`
 --
 
-INSERT INTO `post` (`id`, `caption`, `image`) VALUES
-(56, 'ae', ''),
-(57, '', ''),
-(58, '', ''),
-(59, 'w', '');
+INSERT INTO `post` (`id`, `user_id`, `caption`) VALUES
+(99, 0, 'ghoitsinteger'),
+(100, 0, 'kontol'),
+(101, 0, 'afaef'),
+(102, 0, 'monyet12');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'a', 'a', 'a');
+(1, 'a', 'a', 'a'),
+(2, 'satria', 'satria', 'e7a73b1a1bb6328e80305273219a8e048e33de8b'),
+(3, 'adit', 'adit', '2e445949d370543ad32c166c38b1278d67316509');
 
 --
 -- Indexes for dumped tables
@@ -87,13 +89,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
