@@ -1,15 +1,16 @@
 <?php
-    include ("konek.php");
+    include ("../konek.php");
 
         if(isset($_POST['submit'])){
             if($_POST['submit'] == "add"){
               add();
             } else if ($_POST['submit'] == "edit"){
               edit();
-            } else {
-              delete();
-            }
-          }
+            } 
+         }
+         if($_GET['hapus']){
+            delete();
+        }
         
           function add(){
             global $konek;
@@ -19,7 +20,7 @@
             $sql = mysqli_query($konek, $query);
         
             if($sql){
-              header("location: home.php");
+              header("location: ../home.php");
             } else {
               echo "<script>alert('error')</script>";
             }
@@ -40,7 +41,7 @@
             $sql = mysqli_query($konek, $query);
      
                  if($sql){
-                     header("location: home.php");
+                     header("location: ../home.php");
                  } else {
                      echo $query;
                  }

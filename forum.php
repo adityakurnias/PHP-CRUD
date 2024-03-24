@@ -5,7 +5,6 @@
 ?>
 
   <!-- form post -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +19,10 @@
 
 <!-- This is an example component -->
 <div class="max-w-2xl mx-auto mt-8">
-    <form action="process.php" method="POST">
+    <form action="action/process.php" method="POST">
 	<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
     
-  <textarea id="message" rows="4" name="cp" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+  <textarea id="message" rows="4" name="cp" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..." required></textarea>
   <div class="mt-8 flex justify-center">
 
   <!-- kondisi -->
