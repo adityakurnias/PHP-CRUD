@@ -7,10 +7,12 @@
             } else if ($_POST['submit'] == "edit"){
               edit();
             } 
-         }
-         if($_GET['hapus']){
-            delete();
-        }
+         
+         
+          } else if($_GET['hapus']){
+          delete();
+      }
+         
         
           function add(){
             global $konek;
@@ -30,7 +32,25 @@
         
           }
           function edit(){
-            echo "oke";
+            global $konek;    //global $konek; buat nyambungin include dari ataske function
+            if(isset($_GET['ubah'])){
+              
+              
+              $id = $_POST['id-form'];
+              $caption = $_POST['cp'];
+              
+              $query = "UPDATE `post` SET `caption`='$caption' WHERE id= '$id';";
+              $sql = mysqli_query($konek, $query);
+              
+              if($sql){
+                header("location: ../home.php");
+              }else {
+                echo "$query";
+              }
+
+            }
+
+
           }
           function delete(){
             global $konek;

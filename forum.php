@@ -1,6 +1,20 @@
 <?php
+   include ("konek.php");
+   $idok = '';
+   $caption = '';  //dikasih variabel value kosong buat di kondisi add captionnya ga ke trigger
 
+ if(isset($_GET['ubah'])){
+   $id = $_GET['ubah'];
 
+// dibawah ini cara buat read buat edit, jadi pas edit ada bekas inputkita di add cuy #bangsat
+  $query= "SELECT * FROM post WHERE id = '$id';";
+  $sql = mysqli_query($konek, $query);
+
+  $result = mysqli_fetch_assoc($sql);
+
+   $idok= $result['id'];
+   $caption = $result['caption'];
+ }
 
 ?>
 
@@ -20,9 +34,10 @@
 <!-- This is an example component -->
 <div class="max-w-2xl mx-auto mt-8">
     <form action="action/process.php" method="POST">
-	<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-    
-  <textarea id="message" rows="4" name="cp" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..." required></textarea>
+      <!-- dibawah ini, input buat cek doang udh sesuai belum idnya :v + cek di proses -->
+    <input type="hidden" name="id-form" value="<?= $idok ?>">
+	<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your Post:</label>
+  <textarea id="message" rows="4" name="cp" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Example:Adit kayang di rooftop" required><?= $caption ?></textarea>
   <div class="mt-8 flex justify-center">
 
   <!-- kondisi -->
