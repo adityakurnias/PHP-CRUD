@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 24 Mar 2024 pada 17.19
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Host: localhost
+-- Waktu pembuatan: 25 Mar 2024 pada 13.39
+-- Versi server: 10.4.6-MariaDB
+-- Versi PHP: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,19 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `caption` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `post`
---
-
-INSERT INTO `post` (`id`, `user_id`, `caption`) VALUES
-(99, 0, 'ghoitsinteger'),
-(100, 0, 'kontol'),
-(101, 0, 'afaef'),
-(102, 0, 'monyet12');
+  `uid` text NOT NULL,
+  `content` text NOT NULL,
+  `laiks` int(11) NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -51,19 +43,10 @@ INSERT INTO `post` (`id`, `user_id`, `caption`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'a', 'a', 'a'),
-(2, 'satria', 'satria', 'e7a73b1a1bb6328e80305273219a8e048e33de8b'),
-(3, 'adit', 'adit', '2e445949d370543ad32c166c38b1278d67316509');
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -89,13 +72,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
