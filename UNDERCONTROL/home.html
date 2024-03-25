@@ -1,0 +1,149 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class=" overflow-x-hidden h-screen bg-gray-800">
+  <nav class="sticky top-0 w-screen h-9 bg-gray-700/10 p-2 px-96 shadow-md flex  justify-between items-center z-10 backdrop-blur">
+    <h1 class="font-semibold text-white">Website todo Maker!</h1>
+  </nav>
+  <h1 class="text-slate-100 items-center text-center mt-4">Now is, 26 March 2024</h1>
+  <div class="w-screen h-screen px-96 flex justify-center">
+
+    <div id="formUpload" class="hidden fixed flex flex-col justify-center items-center bg-slate-700 text-slate-300 w-1/2 h-1/2 self-center rounded-lg backdrop-blur">
+      <form class="flex flex-col justify-center items-center" action="./action/upload.php" method="post">
+        <textarea placeholder="Insert your to do today!" class="max-h-48 mb-6 rounded-lg" cols="50" rows="10"></textarea>
+        <input class="mb-6" type="file" accept=".jpg, .png, .jpeg, .webp">
+        <input type="submit" value="Upload">
+      </form>
+    </div>
+    <div id="listTodo" class="flex justify-center items-center">
+        <div class="relative overflow-x-auto shadow-2xl sm:rounded-lg">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Activity
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Time (minutes)
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Priority
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Status
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Coding JS
+                        </th>
+                        <td class="px-6 py-4">
+                            120
+                        </td>
+                        <td class="px-6 py-4">
+                            Very High
+                        </td>
+                        <td class="px-6 py-4">
+                            Done
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Coding PHP
+                        </th>
+                        <td class="px-6 py-4">
+                            1
+                        </td>
+                        <td class="px-6 py-4">
+                            Very Low
+                        </td>
+                        <td class="px-6 py-4">
+                            Opened
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Coding Ruby on Rails
+                        </th>
+                        <td class="px-6 py-4">
+                            60
+                        </td>
+                        <td class="px-6 py-4">
+                            High
+                        </td>
+                        <td class="px-6 py-4">
+                            On Progress
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Coding C++
+                        </th>
+                        <td class="px-6 py-4">
+                            35
+                        </td>
+                        <td class="px-6 py-4">
+                            Medium
+                        </td>
+                        <td class="px-6 py-4">
+                            Done
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Menghina PHP
+                        </th>
+                        <td class="px-6 py-4">
+                            9999
+                        </td>
+                        <td class="px-6 py-4">
+                            Very High
+                        </td>
+                        <td class="px-6 py-4">
+                            Done
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="absolute bg-slate-100 z-10 mb-24 self-end rounded-full flex justify-center items-center hover:translate-y-[-5px] duration-100 backdrop-blur-sm shadow-lg p-2" onclick="addPopup()">
+      <img class="" src="../img/add.png" width="40px">
+    </div>
+  </div>
+
+  <script src="../js/addPopup.js"></script>
+</body>
+
+</html>

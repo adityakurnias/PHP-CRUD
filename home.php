@@ -12,9 +12,6 @@ $querya = "SELECT * FROM `users` ";
 $sqla = mysqli_query($konek, $querya);
 $hasil = mysqli_fetch_assoc($sqla);
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
