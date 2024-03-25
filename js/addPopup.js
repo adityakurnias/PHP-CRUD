@@ -1,5 +1,5 @@
 const show = document.getElementById('addPopup');
-show.addEventListener("click", O => {
+show.addEventListener("click", () => {
     const formUpload = document.getElementById('formUpload');
     if (formUpload.classList.contains('hidden')) {
       formUpload.classList.remove('hidden');

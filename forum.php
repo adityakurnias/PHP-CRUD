@@ -64,7 +64,7 @@
 
   <?php
    } 
-   echo $_SESSION['username'];?>
+  ?>
 
 </div>
     <!-- component juga -->

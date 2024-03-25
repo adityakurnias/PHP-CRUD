@@ -9,8 +9,4 @@
 
     if($konek->connect_error){
         echo "Db Rusak";
-        die("Eror cuk");
     }
-
-    mysqli_select_db($konek, $db);
-
