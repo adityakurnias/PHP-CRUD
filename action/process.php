@@ -8,7 +8,10 @@ if (isset($_POST['add'])) {
   edit();
 } else if (isset($_GET['hapus'])) {
   delete();
+} elseif(isset($_GET['laiks'])){
+  laiks();
 }
+
 
 
 function add()
@@ -27,8 +30,7 @@ function add()
   if ($sql) {
     header("location: ../home.php");
   } else {
-    $msg = "Gagal memposting karena: " . mysqli_error($konek);
-    header("location: ../home.php?msg=".$msg);
+    header("location: ../home.php");
   }
 }
 function edit()
@@ -38,7 +40,7 @@ function edit()
   $id = $_POST['id-form'];
   $caption = $_POST['cp'];
 
-  $query = "UPDATE `post` SET `caption`='$caption' WHERE id='$id'";
+  $query = "UPDATE `post` SET `content`='$caption' WHERE id='$id'";
   $sql = mysqli_query($konek, $query);
 
   if ($sql) {
@@ -64,4 +66,23 @@ function delete()
   } else {
     echo $query;
   }
+}
+
+
+function laiks() {
+  global $konek;
+
+  $id = $_GET['laiks'];
+
+  $laiksquery = "SELECT laiks FROM post WHERE id= '$id'";
+  $res = $konek->query($laiksquery);
+  $resslaik = $res->fetch_assoc()['laiks'];
+
+
+  if($resslaik){
+   echo $resslaik;
+  }
+
+
+
 }

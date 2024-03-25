@@ -17,7 +17,7 @@
   $result = mysqli_fetch_assoc($sql);
 
    $idok= $result['id'];
-   $caption = $result['caption'];
+   $caption = $result['content'];
  }
 
 ?>

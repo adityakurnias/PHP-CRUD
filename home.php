@@ -12,10 +12,7 @@ $querya = "SELECT * FROM `users` ";
 $sqla = mysqli_query($konek, $querya);
 $hasil = mysqli_fetch_assoc($sqla);
 
-if($_GET['msg']) {
-    $msg = $_GET['msg'];
-    echo("<script>alert('$msg')</script>");
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +63,7 @@ if($_GET['msg']) {
                       </g>
                 </svg>
                 </a>
-                <span class="ml-3">999+</span>
+                <span class="ml-3"><?= $result['laiks']; ?></span>
               </div>
               <div class="flex items-center ">
                 <a href="https://youtu.be/uHgt8giw1LY?si=7wkOaRBMxjqtJN1S" target="_blank">
