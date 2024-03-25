@@ -12,6 +12,10 @@ $querya = "SELECT * FROM `users` ";
 $sqla = mysqli_query($konek, $querya);
 $hasil = mysqli_fetch_assoc($sqla);
 
+if($_GET['msg']) {
+    $msg = $_GET['msg'];
+    echo("<script>alert('$msg')</script>");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,5 +96,4 @@ $hasil = mysqli_fetch_assoc($sqla);
 
   <script src="./js/addPopup.js"></script>
 </body>
-
 </html>

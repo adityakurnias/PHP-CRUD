@@ -14,20 +14,21 @@ if (isset($_POST['add'])) {
 function add()
 {
   global $konek;
-  //ambil id
+  //ambil uname
   $email = $_SESSION['email'];
   $ambilname = "SELECT username FROM users WHERE email = '$email'";
   $res = $konek->query($ambilname);
   $uid = $res->fetch_assoc()['username'];
 
   $caption = $_POST['cp'];
-  $query = "INSERT INTO `post`(`uid`, `content`) VALUES ('$uid','$caption')";
+  $query = "INSERT INTO `post`(`uid`, `content`, `laiks`) VALUES ('$uid','$caption', 0)";
   $sql = mysqli_query($konek, $query);
 
   if ($sql) {
     header("location: ../home.php");
   } else {
-    echo "<script>alert('error')</script>";
+    $msg = "Gagal memposting karena: " . mysqli_error($konek);
+    header("location: ../home.php?msg=".$msg);
   }
 }
 function edit()
