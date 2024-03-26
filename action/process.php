@@ -8,7 +8,7 @@ if (isset($_POST['add'])) {
   edit();
 } else if (isset($_GET['hapus'])) {
   delete();
-} elseif(isset($_GET['laiks'])){
+} else if(isset($_GET['laiks'])){
   laiks();
 }
 
@@ -77,12 +77,11 @@ function laiks() {
   $laiksquery = "SELECT laiks FROM post WHERE id= '$id'";
   $res = $konek->query($laiksquery);
   $resslaik = $res->fetch_assoc()['laiks'];
-
-
-  if($resslaik){
-   echo $resslaik;
+  $resslaik++;
+  
+  $query = "UPDATE `post` SET `laiks`='$resslaik' WHERE id='$id'";
+  $sql = mysqli_query($konek, $query);
+  if ($sql) {
+    header("location: ../home.php");
   }
-
-
-
 }

@@ -8,7 +8,7 @@
 </head>
 <body class="flex flex-col justify-center items-center h-screen bg-slate-900/10 mx-10">
   <h1 class="font-bold text-3xl mt-4"><b>AUTHOR</b></h1>
-  <div class="flex justify-around  flex-col mt-2 columns-5 grid grid-cols-5 gap-4 content-start">
+  <div class="justify-around  flex-col mt-2 columns-5 grid grid-cols-5 gap-4 content-start">
   
   <li class="text-sm leading-6">
     <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
