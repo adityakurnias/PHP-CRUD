@@ -34,14 +34,14 @@ $hasil = mysqli_fetch_assoc($sqla);
     </div>
   </nav>
 
-  <div class="mx-56 h-screen flex justify-center">
-    <div class="flex flex-col">
+  <div class="mx-auto h-screen flex justify-center">
+    <div class="flex flex-col ">
       <!-- main feed -->
       <?php
       while ($result = mysqli_fetch_assoc($sql)) {
       ?>
-        <div class=" items-center p-2">
-          <div class="bg-white border-gray-200 p-4 rounded-xl w-2xl h-auto border max-w-2xl flex flex-col ">
+        <div class="items-center p-2">
+          <div class="bg-white border-gray-200 p-4 rounded-xl w-2xl h-auto border min-w-64 max-w-2xl flex flex-col ">
             <div class="flex justify-between">
               <div class="flex items-center">
                 <img class="h-11 w-11 rounded-full" src="img/guest.png" />
