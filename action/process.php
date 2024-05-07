@@ -28,9 +28,9 @@ function add()
   $sql = mysqli_query($konek, $query);
 
   if ($sql) {
-    header("location: ../home.php");
+    header("location: ../page/home.php");
   } else {
-    header("location: ../home.php");
+    header("location: ../page/home.php");
   }
 }
 function edit()
@@ -44,7 +44,7 @@ function edit()
   $sql = mysqli_query($konek, $query);
 
   if ($sql) {
-    header("location: ../home.php");
+    header("location: ../page/home.php");
   } else {
     echo "$query";
   }
@@ -62,7 +62,7 @@ function delete()
   $sql = mysqli_query($konek, $query);
 
   if ($sql) {
-    header("location: ../home.php");
+    header("location: ../page/home.php");
   } else {
     echo $query;
   }
@@ -82,6 +82,6 @@ function laiks() {
   $query = "UPDATE `post` SET `laiks`='$resslaik' WHERE id='$id'";
   $sql = mysqli_query($konek, $query);
   if ($sql) {
-    header("location: ../home.php");
+    header("location: ../page/home.php");
   }
 }

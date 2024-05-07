@@ -51,7 +51,7 @@ $hasil = mysqli_fetch_assoc($sqla);
                   </div>
                 </div>
                 <!-- edit -->
-                <a href="../action/forum.php?ubah=<? $result['id']; ?>" class="">🖊</a></span>
+                <a href="../action/forum.php?ubah=<?= $result['id']; ?>" class="">🖊</a></span>
               </div>
               <div class="text-wrap">
                 <p class="text-black block text-xl leading-snug mt-3 break-all"><?= $result['content']; ?></p>
@@ -60,14 +60,14 @@ $hasil = mysqli_fetch_assoc($sqla);
               <div class="border-gray-200 border border-b-0 my-1"></div>
               <div class="text-gray-500 flex mt-3">
                 <div class="flex items-center mr-6">
-                  <a href="action/process.php?laiks=<?= $result['id']; ?>"><img class="w-[25px] hover:w-7 duration-100" src="../img/heart.png"></a>
+                  <a href="../action/process.php?laiks=<?= $result['id']; ?>"><img class="w-[25px] hover:w-7 duration-100" src="../img/heart.png"></a>
                   <span class="ml-3"><?= $result['laiks']; ?></span>
                 </div>
                 <div class="flex items-center ">
                   <a class="w-6" href="https://youtu.be/uHgt8giw1LY?si=7wkOaRBMxjqtJN1S" target="_blank"><img src="../img/comment.png" alt=""></a>
                   <span class="ml-8">
                     <!-- delete -->
-                    <a href="../action/forum.php?hapus=<? $result['id']; ?>" name="hapus" onclick="return confirm('Yakin dek?')"><img class="w-4 hover:w-5 duration-100" src="../img/trash-bin.png"></a></span>
+                    <a href="../action/process.php?hapus=<?= $result['id']; ?>" name="hapus" onclick="return confirm('Yakin dek?')"><img class="w-4 hover:w-5 duration-100" src="../img/trash-bin.png"></a></span>
                 </div>
               </div>
             </div>
@@ -87,17 +87,18 @@ $hasil = mysqli_fetch_assoc($sqla);
     </div>
     <!-- sub left -->
     <div class="absolute rounded-full transition-all duration-[0.2s] ease-out scale-y-0 group-hover:scale-y-100 group-hover:-translate-x-16   flex  p-2 hover:p-3 bg-green-300 scale-100 hover:bg-green-400 text-white">
-    <a href=""><img src="../img/settings.png" width="30px"></a>
+    <a href="account.php"><img src="../img/settings.png" width="30px"></a>
     </div>
     <!-- sub top -->
     <div class="absolute rounded-full transition-all duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-16  flex  p-2 hover:p-3 bg-blue-300 hover:bg-blue-400  text-white">
-    <a href="forum.php" name="mantap"><img id="addPopup" class="" src="../img/plus.png" width="30px" value="osas"></a>
+    <a href="../action/forum.php" name="mantap"><img id="addPopup" class="" src="../img/plus.png" width="30px" value="osas"></a>
     </div>
     <!-- sub middle -->
     <div class="absolute rounded-full transition-all duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-14 group-hover:-translate-x-14   flex  p-2 hover:p-3 bg-yellow-300 hover:bg-yellow-400 text-white">
+      <a href="about.php">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
-        </svg>
+        </svg></a>
     </div>
 </div>
     </div>
