@@ -11,7 +11,7 @@
         xhttp.onload = function(){
           document.getElementById("table").innerHTML = this.responseText;
         }
-        xhttp.open("GET", "home.php");
+        xhttp.open("GET", "index.php");
         xhttp.send();
       }
 

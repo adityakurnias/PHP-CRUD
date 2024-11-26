@@ -7,7 +7,7 @@
   <link rel="icon" href="">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col justify-center items-center h-screen bg-slate-900/10 mx-10">
+<body class="flex flex-col justify-center items-center h-screen bg-slate-50 mx-10">
   <h1 class="font-bold text-3xl mt-4"><b>Contributors</b></h1>
   <div class="justify-around  flex-col mt-2 columns-5 grid grid-cols-5 gap-4 content-start">
   
@@ -96,7 +96,7 @@
   <li type="none" class="text-sm leading-6">
     <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
       <blockquote class="mt-6 text-slate-700 dark:text-slate-300">
-        <p>BENCI PHP CINTA JS <3</p>
+        <p>i LOVE LARAVEL 3000 <3</p>
       </blockquote>
       <figcaption class="flex items-center space-x-4"><img src="../img/adeli.jpg" alt="" class="flex-none w-14 h-14 rounded-full object-cover" loading="lazy" decoding="async">
         <div class="flex-auto">

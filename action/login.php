@@ -14,7 +14,7 @@
     if ($result->num_rows > 0) {
       $_SESSION['username']= $adudu['username'];
       $_SESSION['email'] = $email;
-      header("location: ../page/home.php");
+      header("location: ../page/index.php");
     }
   }
 ?>
@@ -28,7 +28,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[url('../img/tesbg.jpg')] bg-cover bg-no-repeat bg-center ">
-<div class="flex bg-zinc-100/20 h-screen md:w-1/4  items-center justify-center backdrop-blur-sm border-2 border-slate-500 w-screen">
+<div class="flex bg-zinc-100/20 h-screen items-center justify-center backdrop-blur-sm border-2 border-slate-500 w-screen">
       <div class="bg-zinc-100 px-4 w-3/4 max-w-80 h-auto rounded-lg drop-shadow-md justify-center">
       
         <h1 class="text-3xl my-3 text-center font-semibold tracking-wides text-slate-700">
