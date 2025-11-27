@@ -2,4 +2,5 @@
  
 ## Social Media App using PHP, Assignment from school 
 
-### I plan to remake it
+## The remake : https://github.com/adityakurnias/fe-sosmed-katanya
+## Backend : https://github.com/adityakurnias/fe-sosmed-katanya
