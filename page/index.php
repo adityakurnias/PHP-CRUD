@@ -45,7 +45,8 @@ $sql = mysqli_query($konek, $query);
       
       <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
         <div class="flex items-center">
-          <div class="w-10 h-10 rounded-full bg-gray-300"></div> <p class="ml-3 text-gray-500">What's on your mind, <span class="font-semibold"><?= $_SESSION['username']; ?></span>?</p>
+          <div class="w-10 h-10 rounded-full bg-gray-300"></div> 
+          <p class="ml-3 text-gray-500">What's on your mind, <span class="font-semibold"><?= $_SESSION['username']; ?></span>?</p>
           <a href="../action/forum.php" class="ml-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300 shadow-md">
             Post
           </a>
@@ -66,18 +67,25 @@ $sql = mysqli_query($konek, $query);
               </div>
             </div>
             
-            <div class="flex space-x-3 text-gray-400">
-              <a href="../action/forum.php?ubah=<?= $result['id']; ?>" class="hover:text-blue-500 transition duration-150" title="Edit Post">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                </svg>
-              </a>
-              <a href="../action/process.php?hapus=<?= $result['id']; ?>" name="hapus" onclick="return confirm('Are you sure you want to delete this post?')" class="hover:text-red-500 transition duration-150" title="Delete Post">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.56 6.496m18.157 0c-.39-.148-1.57-.45-3.007-.45H8.783c-1.437 0-2.617.302-3.007.45L3 6.496l.75-2.25a.75.75 0 01.75-.562h15c.313 0 .584.218.723.515l.385.77A.75.75 0 0121 4.5h-.75" />
-                </svg>
-              </a>
-            </div>
+            <?php
+            // CHECKING: Only show if the logged-in user is the post owner
+            if ($_SESSION['username'] == $result['uid']) {
+            ?>
+              <div class="flex space-x-3 text-gray-400">
+                <a href="../action/forum.php?ubah=<?= $result['id']; ?>" class="hover:text-blue-500 transition duration-150" title="Edit Post">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                  </svg>
+                </a>
+                <a href="../action/process.php?hapus=<?= $result['id']; ?>" name="hapus" onclick="return confirm('Are you sure you want to delete this post?')" class="hover:text-red-500 transition duration-150" title="Delete Post">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.56 6.496m18.157 0c-.39-.148-1.57-.45-3.007-.45H8.783c-1.437 0-2.617.302-3.007.45L3 6.496l.75-2.25a.75.75 0 01.75-.562h15c.313 0 .584.218.723.515l.385.77A.75.75 0 0121 4.5h-.75" />
+                  </svg>
+                </a>
+              </div>
+            <?php
+            } // End of conditional check
+            ?>
           </div>
 
           <div class="py-4 px-4">
@@ -105,7 +113,7 @@ $sql = mysqli_query($konek, $query);
           </div>
         </div>
       <?php
-      }
+      } // End of while loop
       ?>
       
       <div class="text-center text-gray-500 py-6">
